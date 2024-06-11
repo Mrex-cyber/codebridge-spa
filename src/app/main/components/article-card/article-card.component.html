@@ -1,0 +1,9 @@
+<div class="card-container">
+  <img [src]="article.image_url"/>
+  <div class="text-container">
+    <p class="date-field">{{article.published_at | date:'longDate'}}</p>
+    <h3 class="article-title" [innerHTML]="article.title | highlight: template"></h3>
+    <p [innerHTML]="article.summary | truncate | highlight: template"></p>
+    <a class="go-detail-link" routerLink="/detail/{{article.id}}">Read more</a>
+  </div>
+</div>
